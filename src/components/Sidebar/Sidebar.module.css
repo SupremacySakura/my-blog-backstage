@@ -1,0 +1,20 @@
+.sidebar-box {
+  width: clamp(200px, 20%, 400px);
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+.sidebar-box .sidebar-list {
+  width: 100%;
+}
+.sidebar-box .sidebar-list .list-item {
+  width: 80%;
+  height: 50px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #000000;
+  cursor: pointer;
+}
+.sidebar-box .sidebar-list .list-item.active-item {
+  background-color: #007bff;
+  color: #ffffff;
+}

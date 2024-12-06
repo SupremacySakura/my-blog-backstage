@@ -3,7 +3,7 @@ function Home() {
 
     return (
         <>
-            <div className={Style.homeBox}>主页</div>
+            <div className={Style.homeBox}>首页</div>
         </>
     )
 }

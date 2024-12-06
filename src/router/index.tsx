@@ -1,38 +1,49 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import Main from "../views/Main/Main"
-import Home from "../views/HomePage/Home"
-import Share from "../views/SharePage/Share"
-import Article from "../views/ArticlePage/Article"
-import Message from "../views/MessagePage/Message"
-import Friend from "../views/FriendPage/Friend"
+import App from "@/App"
+import Main from "@/views/Main/Main"
+import Home from "@/views/HomePage/Home"
+import Share from "@/views/SharePage/Share"
+import Article from "@/views/ArticlePage/Article"
+import Message from "@/views/MessagePage/Message"
+import Friend from "@/views/FriendPage/Friend"
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main />,
+        element: <App />,
         children: [
             {
                 path: '/',
-                element: <Navigate to='/home' replace />
+                element: <Navigate to='/main/home' replace />
             },
             {
-                path: 'home',
-                element: <Home />
+                path: 'main',
+                element: <Main />,
+                children: [
+                    {
+                        path: 'home',
+                        element: <Home />
+                    },
+                    {
+                        path: 'share',
+                        element: <Share />
+                    },
+                    {
+                        path: 'article',
+                        element: <Article />
+                    },
+                    {
+                        path: 'message',
+                        element: <Message />
+                    },
+                    {
+                        path: 'friend',
+                        element: <Friend />
+                    }
+                ]
             },
             {
-                path: 'share',
-                element: <Share />
-            },
-            {
-                path: 'article',
-                element: <Article />
-            },
-            {
-                path: 'message',
-                element: <Message />
-            },
-            {
-                path: 'friend',
-                element: <Friend />
+                path: '*',
+                element: <Navigate to='/main/home' replace />
             }
         ]
     }

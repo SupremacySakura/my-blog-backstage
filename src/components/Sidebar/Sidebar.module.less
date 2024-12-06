@@ -1,0 +1,23 @@
+.sidebar-box {
+    width: clamp(200px, 20%, 400px);
+    background-color: rgba(245, 245, 245, 1);
+    padding: 10px;
+
+    .sidebar-list {
+        width: 100%;
+
+        .list-item {
+            width: 80%;
+            height: 50px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: rgba(0, 0, 0, 1);
+            cursor: pointer;
+
+            &.active-item {
+                background-color: rgba(0, 123, 255, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
